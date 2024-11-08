@@ -1,0 +1,21 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: OpenAI
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}  # 替换成个人的API_KEY
+      base-url: https://api.openai.com  # 如果使用中转，一定要改成中转的url
+      chat:
+        options:
+          model: gpt-3.5-turbo
+          # model: gpt-4o  # 图像分析用
+  mvc:
+    async:
+      request-timeout: -1
+
+weather:  # 调用的天气API
+  api-key: ${WEATHER_API_KEY}
+  api-url: http://api.weatherapi.com/v1
